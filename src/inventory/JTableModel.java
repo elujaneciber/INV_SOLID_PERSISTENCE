@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class JTableModel extends AbstractTableModel {
 
-    private String[] colums = {"ID", "Name Product", "Price", "Stock"};
+    private final String[] colums = {"ID", "Name Product", "Price", "Stock"};
     private List<Product> product = new ArrayList<>();
 
     public JTableModel(List<Product> prod) {
@@ -63,5 +63,5 @@ public class JTableModel extends AbstractTableModel {
 
     public Product detail(int row) {
         return this.product.get(row);
-    }
+    }  
 }

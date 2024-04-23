@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class TableInventory {
 
-    private List<Product> listProducts;
+    private final List<Product> listProducts;
 
     public TableInventory() {
         this.listProducts = new ArrayList<>();
