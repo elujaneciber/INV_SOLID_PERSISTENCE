@@ -1,0 +1,70 @@
+{
+  "listProducts": [
+    {
+      "id": 1,
+      "name": "Alcohol",
+      "price": 231.0,
+      "stock": 123
+    },
+    {
+      "id": 2,
+      "name": "Arroz",
+      "price": 4.0,
+      "stock": 34
+    },
+    {
+      "id": 3,
+      "name": "Telefono",
+      "price": 34.524,
+      "stock": 1214
+    },
+    {
+      "id": 4,
+      "name": "Computadores",
+      "price": 35235.0,
+      "stock": 34
+    },
+    {
+      "id": 5,
+      "name": "Gaseosas",
+      "price": 3500.0,
+      "stock": 3453
+    },
+    {
+      "id": 6,
+      "name": "Maquillaje",
+      "price": 7567.0,
+      "stock": 345
+    },
+    {
+      "id": 7,
+      "name": "Botas",
+      "price": 45677.0,
+      "stock": 58556
+    },
+    {
+      "id": 8,
+      "name": "Termos",
+      "price": 5000.0,
+      "stock": 74
+    },
+    {
+      "id": 9,
+      "name": "Pelotas de futbol",
+      "price": 19000.0,
+      "stock": 4563
+    },
+    {
+      "id": 10,
+      "name": "Bolsitas",
+      "price": 1.0,
+      "stock": 9999
+    },
+    {
+      "id": 11,
+      "name": "Champú",
+      "price": 200.0,
+      "stock": 232
+    }
+  ]
+}

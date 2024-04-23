@@ -19,17 +19,20 @@ public class InterfazJFrame extends javax.swing.JFrame {
     public String name;
     public double price;
     public int stock;
-    Product Products[];
-    TableInventory Inventory = new TableInventory();
+    private Product Products[];
+    private TableInventory Inventory;;
     private String filter;
-
+    private final String fileLocation = "ProductsData.json";
+    private final PersistenceJson persistenceData = new PersistenceJson(fileLocation);;
+    
     /**
      * Creates new form InterfazJFrame
      */
     public InterfazJFrame() {
+        this.Inventory = new TableInventory();
         initComponents();
+        Inventory = persistenceData.loadData();
         this.jTableInventory.setModel(new JTableModel(Inventory.getListProducts()));
-
     }
 
     /**
@@ -286,6 +289,7 @@ public class InterfazJFrame extends javax.swing.JFrame {
                     int newID = Inventory.consecutiveId() + 1;
                     Inventory.addProduct(new Product(newID, name, price, stock));
                     this.jTableInventory.setModel(new JTableModel(Inventory.getListProducts()));
+                    persistenceData.saveData(Inventory);
                     clearFields();
                     JOptionPane.showMessageDialog(this, "Added successfully.", "Sucess", 1);
                 } else {
@@ -313,6 +317,7 @@ public class InterfazJFrame extends javax.swing.JFrame {
             int id = Integer.parseInt(txtID.getText());
             Inventory.deleteProduct(id);
             this.jTableInventory.setModel(new JTableModel(Inventory.getListProducts()));
+            persistenceData.saveData(Inventory);
             clearFields();
             JOptionPane.showMessageDialog(this, "The product you selected was successfully deleted.", "Sucess", 1);
         } catch (Exception ex) {
@@ -339,6 +344,7 @@ public class InterfazJFrame extends javax.swing.JFrame {
 
             Inventory.updateProduct(id, name, price, stock);
             this.jTableInventory.setModel(new JTableModel(Inventory.getListProducts()));
+            persistenceData.saveData(Inventory);
             clearFields();
             JOptionPane.showMessageDialog(this, "The product I selected was successfully updated.", "Warning", 1);
 
@@ -386,7 +392,6 @@ public class InterfazJFrame extends javax.swing.JFrame {
         this.txtPrice.setText("");
         this.txtStock.setText("");
     }
-
     /**
      * @param args the command line arguments
      */
